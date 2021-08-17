@@ -1,0 +1,9 @@
+{
+  "port": 5000,
+  "db_Name": "newsdb",
+  "db_User": "root",
+  "db_Password": "15112008",
+  "db_Host": "localhost",
+  "db_Port": 5432,
+  "jwtSecret": "fdsfg"
+}
