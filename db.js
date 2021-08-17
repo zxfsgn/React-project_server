@@ -1,5 +1,8 @@
 const Sequelize = require('sequelize')
 
-module.exports = new Sequelize("newsdb", "root", "15112008", {
-  dialect: "mysql"
+module.exports = new Sequelize(process.env.DATABASE_URL, {
+  dialect: "mysql",
+  dialectOptions: {
+    ssl: true
+  }
 })
