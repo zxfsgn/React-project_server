@@ -7,7 +7,7 @@ const app = express()
 
 const PORT = process.env.PORT || config.get('port')
 
-//app.use(cors())
+app.use(cors())
 app.use(express.json())
 
 app.use('/api/auth', require('./routes/authRouter'))
