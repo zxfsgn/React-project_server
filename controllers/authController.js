@@ -60,13 +60,21 @@ exports.login = async (req, res) => {
     let user = await User.findOne({ where: { email } })
 
     if (!user) {
-      return res.status(400).json({ massage: 'Пользователь не найден' })
+      //return res.status(400).json({ massage: 'Пользователь не найден' })
+      return res.json({
+        status: 'err',
+        message: 'wrong_email_or_password'
+      })
     }
 
     const isMatch = await bcrypt.compare(password, user.password)
 
     if (!isMatch) {
-      return res.status(400).json({ massage: 'Неверный пароль, попробуйте снова' })
+      //return res.status(400).json({ massage: 'Неверный пароль, попробуйте снова' })
+      return res.json({
+        status: 'err',
+        message: 'wrong_email_or_password'
+      })
     }
 
     const token = generateJwt(user.id)

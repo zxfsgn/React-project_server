@@ -5,6 +5,7 @@ const authMiddleware = require('../middleware/authMiddleware')
 
 contentRouter.get(
   '/profile',
+  authMiddleware,
   contentController.profile
 )
 
