@@ -1,8 +1,7 @@
 const Sequelize = require('sequelize')
 
-module.exports = new Sequelize(process.env.DATABASE_URL, {
+module.exports = new Sequelize('heroku_946f575f2d1ee0e', 'b3b19bec5042bc', '12ddc7c5', {
   dialect: "mysql",
-  dialectOptions: {
-    ssl: true
-  }
+  host: "us-cdbr-east-04.cleardb.com"
 })
+
