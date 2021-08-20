@@ -19,5 +19,15 @@ contentRouter.get(
   contentController.news
 )
 
+contentRouter.put(
+  '/news',
+  contentController.editArticle
+)
+
+contentRouter.delete(
+  '/news',
+  contentController.deleteArticle
+)
+
 
 module.exports = contentRouter
